@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Consumer } from '../../context';
 
+
 class Contact extends React.Component {
 
     constructor() {
@@ -12,6 +13,7 @@ class Contact extends React.Component {
     }
 
     onDeleteClick(id, dispatch) {(
+
         dispatch({type: 'DELETE_CONTACT', payload: id})
     );
     };
