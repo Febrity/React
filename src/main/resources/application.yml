@@ -1,0 +1,31 @@
+spring:
+  profiles: development
+  application:
+    name: ApiContact
+  datasource:
+    url: jdbc:h2:mem:test;
+    platform: h2
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        id.new_generator_mappings: true
+        show_sql: true
+        use_sql_comments: true
+        format_sql: true
+
+###
+#   H2 Settings
+###
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false

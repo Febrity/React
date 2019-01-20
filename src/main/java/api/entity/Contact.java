@@ -7,21 +7,14 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-//@Entity
-//@Table(name = "contact")
+@Entity
+@Table(name = "contact")
 public class Contact {
-
-    public Contact(Long id, String name, String email, String phone) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-    }
 
     @Id
     @Setter
     @Getter
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Consumer } from '../../context';
+import axios from 'axios'
 
 
 class Contact extends React.Component {
@@ -13,9 +14,10 @@ class Contact extends React.Component {
     }
 
     onDeleteClick(id, dispatch) {(
+        axios.delete(`/home/${id}`)
+            .then(res =>  dispatch({type: 'DELETE_CONTACT', payload: id}))
 
-        dispatch({type: 'DELETE_CONTACT', payload: id})
-    );
+        );
     };
 
     onShowClick(id, e) {
