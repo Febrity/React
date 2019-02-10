@@ -1,6 +1,7 @@
 package api.entity;
 
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,27 +9,20 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
+@Data
 @Table(name = "contact")
 public class Contact {
 
     @Id
-    @Getter
-    @Setter
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Long id;
 
     @Column
-    @Getter
-    @Setter
     private String name;
 
     @Column
-    @Getter
-    @Setter
     private String email;
 
     @Column
-    @Getter
-    @Setter
     private String phone;
 }

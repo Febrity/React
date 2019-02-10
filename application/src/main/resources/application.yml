@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: localH2
+    active: localPostgres
   application:
     name: ApiContact
   jpa:
