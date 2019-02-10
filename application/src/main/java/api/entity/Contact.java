@@ -12,24 +12,23 @@ import javax.persistence.*;
 public class Contact {
 
     @Id
-    @Setter
     @Getter
+    @Setter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    @Setter
     @Getter
+    @Setter
     private String name;
 
     @Column
-    @Setter
     @Getter
+    @Setter
     private String email;
 
     @Column
-    @Setter
     @Getter
+    @Setter
     private String phone;
-
 }

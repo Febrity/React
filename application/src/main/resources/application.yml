@@ -1,7 +1,16 @@
 spring:
-  profiles: development
+  profiles:
+    active: localH2
   application:
     name: ApiContact
+  jpa:
+    hibernate:
+      ddl-auto: none
+      use-new-id-generator-mapping: true
+
+---
+spring:
+  profiles: localH2
   datasource:
     url: jdbc:h2:mem:test;
     platform: h2
@@ -18,6 +27,18 @@ spring:
         show_sql: true
         use_sql_comments: true
         format_sql: true
+
+---
+spring:
+  profiles: localPostgres
+  datasource:
+    url: jdbc:postgresql://localhost:5432/contact
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+
 
 ###
 #   H2 Settings
